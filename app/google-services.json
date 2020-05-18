@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "36284404690",
+    "firebase_url": "https://ice-shop-ed5dd.firebaseio.com",
+    "project_id": "ice-shop-ed5dd",
+    "storage_bucket": "ice-shop-ed5dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36284404690:android:4d44da4d9558d8fbf36e0b",
+        "android_client_info": {
+          "package_name": "com.example.iceshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36284404690-g8sbuhodcvdjh1i8j8b3qh0o5b7mgg69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iceshop",
+            "certificate_hash": "a331cd40f6d76723b91ab6a06cb431596a52e973"
+          }
+        },
+        {
+          "client_id": "36284404690-e72ltrshbl43hge1jg9dc8fqadb17c68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpj7pV9PX56b4ALvPlsa0bKgxFHcihle4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36284404690-e72ltrshbl43hge1jg9dc8fqadb17c68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
