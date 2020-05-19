@@ -42,14 +42,16 @@ public class inicioActivity extends AppCompatActivity {
                             if(user.getContraseña().equals(contraseña)){
                                 //Voy para la actividad de perfil
 
-                                Toast.makeText(inicioActivity.this,"iniciaste", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(inicioActivity.this, selesccionActivity.class);
+                                startActivity(i);
+                            //    Toast.makeText(inicioActivity.this,"iniciaste", Toast.LENGTH_LONG).show();
                             }else{
                                 //No concuerda la contraseña
 
-                                Log.e("mensaje","paila");
+                                Intent i = new Intent(inicioActivity.this, inicioActivity.class);
+                                startActivity(i);
+                                Toast.makeText(inicioActivity.this,"Ingresa un usuario y contraseña correctos", Toast.LENGTH_LONG).show();
                             }
-
-
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
