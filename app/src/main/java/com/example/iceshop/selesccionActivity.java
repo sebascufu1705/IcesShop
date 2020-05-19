@@ -3,6 +3,7 @@ package com.example.iceshop;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class selesccionActivity extends AppCompatActivity {
 
                     builder.setMessage("¿Ya te registraste como vendedor?");
                     builder.setNegativeButton("No, registrarme", (dialog, which) -> {
+                        Intent i = new Intent(selesccionActivity.this,registroVendedores.class);
+                        startActivity(i);
                         dialog.dismiss();
                     });
                     builder.setPositiveButton("Si", (dialog, which) -> {
