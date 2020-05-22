@@ -50,7 +50,7 @@ public class inicioActivity extends AppCompatActivity {
 
                                 Intent i = new Intent(inicioActivity.this, inicioActivity.class);
                                 startActivity(i);
-                                Toast.makeText(inicioActivity.this,"Ingresa un usuario y contraseña correctos", Toast.LENGTH_LONG).show();
+                                Toast.makeText(inicioActivity.this,"El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
                             }
                         }
                         @Override

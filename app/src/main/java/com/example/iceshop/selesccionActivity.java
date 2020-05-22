@@ -42,7 +42,8 @@ public class selesccionActivity extends AppCompatActivity {
         );
         logoC.setOnClickListener(
                 (v)->{
-                    Toast.makeText(selesccionActivity.this,"Funciona el dos", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(this, HomeCompradorActivity.class);
+                    startActivity(i);
                 }
         );
     }

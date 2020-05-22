@@ -2,6 +2,8 @@ package com.example.iceshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,6 +11,8 @@ import android.widget.ImageView;
 
 import com.example.iceshop.model.Empresa;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.Serializable;
 
 public class registroVendedores extends AppCompatActivity {
 
@@ -19,7 +23,7 @@ public class registroVendedores extends AppCompatActivity {
     private Button RegistrarEmpresaBtn;
     private ImageView imgDiems, imgLocuritas, imgSgrDaddies, imgNams, imgPerritos, imgLelePops;
 
-    private String fotoSeleccionada = "";
+    private String fotoSeleccionada;
 
 
     @Override
@@ -50,48 +54,50 @@ public class registroVendedores extends AppCompatActivity {
                     String codigo = code.getText().toString();
                     String nombreEmp = nameEmp.getText().toString();
                     String producto = product.getText().toString();
+                    String url = fotoSeleccionada;
 
-                    Empresa empresita = new Empresa(nombre,codigo,nombreEmp,producto);
+                    Empresa empresita = new Empresa(nombre, codigo, nombreEmp, producto, url);
 
                     FirebaseDatabase.getInstance().getReference()
                             .child("empresas").child(nombreEmp).setValue(empresita);
+
 
                 }
         );
 
         imgDiems.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "diems";
                 }
         );
 
         imgLocuritas.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "locurita";
                 }
         );
 
         imgLelePops.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "lelepops";
                 }
         );
 
         imgSgrDaddies.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "sgrdaddies";
                 }
         );
 
         imgNams.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "nams";
                 }
         );
 
         imgPerritos.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "@drawable/diems";
+                    fotoSeleccionada = "perritos";
                 }
         );
     }
