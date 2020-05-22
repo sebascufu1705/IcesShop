@@ -19,6 +19,7 @@ public class selesccionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selesccion);
         logoV = findViewById(R.id.logovendedor);
         logoC = findViewById(R.id.logocomprador);
+
         logoV.setOnClickListener(
                 (v)->{
 

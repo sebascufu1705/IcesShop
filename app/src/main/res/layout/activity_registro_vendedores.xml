@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/roboto"
         android:text="Nombre estudiante"
         android:textColor="#C2C2C2"
@@ -58,7 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto"
         android:text="Tipo de producto"
         android:textColor="#C2C2C2"
@@ -71,7 +70,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto"
         android:text="Nombre de la empresa"
         android:textColor="#C2C2C2"
@@ -84,7 +82,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto"
         android:text="Codigo"
         android:textColor="#C2C2C2"
@@ -148,14 +145,85 @@
         android:id="@+id/RegistrarEmpresaBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/botonvendedor"
         android:fontFamily="@font/roboto"
         android:text="Registra tu empresa"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/roboto"
+        android:text="Foto de portada"
+        android:textColor="#C2C2C2"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product" />
+
+    <ImageView
+        android:id="@+id/imgSgrDaddies"
+        android:layout_width="93dp"
+        android:layout_height="86dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/sgrdaddies" />
+
+    <ImageView
+        android:id="@+id/imgPerritos"
+        android:layout_width="96dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/perritos" />
+
+    <ImageView
+        android:id="@+id/imgLelePops"
+        android:layout_width="97dp"
+        android:layout_height="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgPerritos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/lelepops" />
+
+    <ImageView
+        android:id="@+id/imgNams"
+        android:layout_width="91dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/nams" />
+
+    <ImageView
+        android:id="@+id/imgDiems"
+        android:layout_width="91dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgNams"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/diems" />
+
+    <ImageView
+        android:id="@+id/imgLocuritas"
+        android:layout_width="93dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgSgrDaddies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/locurita" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
