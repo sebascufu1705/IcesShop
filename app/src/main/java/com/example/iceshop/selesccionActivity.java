@@ -27,13 +27,14 @@ public class selesccionActivity extends AppCompatActivity {
 
                     builder.setMessage("¿Ya te registraste como vendedor?");
                     builder.setNegativeButton("No, registrarme", (dialog, which) -> {
-                        Intent i = new Intent(selesccionActivity.this,registroVendedores.class);
-                        startActivity(i);
+                        Intent k = new Intent(selesccionActivity.this,registroVendedores.class);
+                        startActivity(k);
                         dialog.dismiss();
                     });
                     builder.setPositiveButton("Si", (dialog, which) -> {
-                        finish();
-                        Toast.makeText(selesccionActivity.this,"Funciono", Toast.LENGTH_LONG).show();
+                        Intent j = new Intent(selesccionActivity.this, MisProductos.class);
+                        startActivity(j);
+
                     });
                     builder.show();
 
