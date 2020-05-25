@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.iceshop.model.Empresa;
@@ -22,11 +24,13 @@ public class HomeCompradorActivity extends AppCompatActivity {
     //private ArrayAdapter<Empresa> adapter;
     //private ArrayList<Empresa> comidas;
     private CustomAdapter adapter;
+    private ImageView flechaAtrasC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_comprador);
+        flechaAtrasC = findViewById(R.id.flechaAtrasC);
 
         listaComidas = findViewById(R.id.listaComidas);
         adapter = new CustomAdapter();
@@ -60,6 +64,12 @@ public class HomeCompradorActivity extends AppCompatActivity {
 
             }
         });
+        flechaAtrasC.setOnClickListener(
+                (v)->{
+                    Intent i = new Intent(HomeCompradorActivity.this, selesccionActivity.class);
+                    finish();
+                }
+        );
 
     }
 }
