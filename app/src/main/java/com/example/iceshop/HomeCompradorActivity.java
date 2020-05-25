@@ -38,6 +38,13 @@ public class HomeCompradorActivity extends AppCompatActivity {
         //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, comidas);
         listaComidas.setAdapter(adapter);
 
+        //flechita de atras
+        flechaAtrasC.setOnClickListener(
+                (v)->{
+                    finish();
+                }
+        );
+
         FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -64,12 +71,7 @@ public class HomeCompradorActivity extends AppCompatActivity {
 
             }
         });
-        flechaAtrasC.setOnClickListener(
-                (v)->{
-                    Intent i = new Intent(HomeCompradorActivity.this, selesccionActivity.class);
-                    finish();
-                }
-        );
+
 
     }
 }

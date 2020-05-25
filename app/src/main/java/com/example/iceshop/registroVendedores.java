@@ -16,12 +16,13 @@ import java.io.Serializable;
 
 public class registroVendedores extends AppCompatActivity {
 
+
     private EditText nameStu;
     private EditText code;
     private EditText nameEmp;
     private EditText product;
     private Button RegistrarEmpresaBtn;
-    private ImageView imgDiems, imgLocuritas, imgSgrDaddies, imgNams, imgPerritos, imgLelePops;
+    private ImageView imgDiems, imgLocuritas, imgSgrDaddies, imgNams, imgPerritos, imgLelePops, flehcaAtrasRV;
 
     private int fotoSeleccionada;
 
@@ -42,6 +43,7 @@ public class registroVendedores extends AppCompatActivity {
         imgNams = findViewById(R.id.imgNams);
         imgSgrDaddies = findViewById(R.id.imgSgrDaddies);
         imgLocuritas = findViewById(R.id.imgLocuritas);
+        flehcaAtrasRV = findViewById(R.id.flehcaAtrasRV);
 
 
 
@@ -98,6 +100,11 @@ public class registroVendedores extends AppCompatActivity {
         imgPerritos.setOnClickListener(
                 (v) -> {
                     fotoSeleccionada = R.drawable.perritos;
+                }
+        );
+        flehcaAtrasRV.setOnClickListener(
+                (v)->{
+                  finish();
                 }
         );
     }

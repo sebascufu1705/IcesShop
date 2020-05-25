@@ -48,7 +48,7 @@ public class registroActivity extends AppCompatActivity {
         );
         iniciar.setOnClickListener(
                 (v)->{
-                    Intent i = new Intent(this,inicioActivity.class);
+                    Intent i = new Intent(registroActivity.this,inicioActivity.class);
                     startActivity(i);
                 }
         );
