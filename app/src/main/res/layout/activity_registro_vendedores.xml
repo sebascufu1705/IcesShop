@@ -172,8 +172,8 @@
         android:id="@+id/imgSgrDaddies"
         android:layout_width="93dp"
         android:layout_height="86dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/sgrdaddies" />
@@ -182,10 +182,10 @@
         android:id="@+id/imgPerritos"
         android:layout_width="96dp"
         android:layout_height="83dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/perritos" />
 
@@ -193,6 +193,7 @@
         android:id="@+id/imgLelePops"
         android:layout_width="97dp"
         android:layout_height="93dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/imgPerritos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -202,8 +203,8 @@
         android:id="@+id/imgNams"
         android:layout_width="91dp"
         android:layout_height="88dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/RegistrarEmpresaBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/nams" />
@@ -212,7 +213,8 @@
         android:id="@+id/imgDiems"
         android:layout_width="91dp"
         android:layout_height="94dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/imgNams"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/diems" />
@@ -221,7 +223,8 @@
         android:id="@+id/imgLocuritas"
         android:layout_width="93dp"
         android:layout_height="91dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/imgSgrDaddies"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/locurita" />

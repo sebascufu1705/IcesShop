@@ -42,7 +42,7 @@ public class selesccionActivity extends AppCompatActivity {
         );
         logoC.setOnClickListener(
                 (v)->{
-                    Intent i = new Intent(this, HomeCompradorActivity.class);
+                    Intent i = new Intent(selesccionActivity.this, HomeCompradorActivity.class);
                     startActivity(i);
                 }
         );

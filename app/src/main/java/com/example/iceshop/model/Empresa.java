@@ -12,9 +12,9 @@ public class Empresa implements Serializable {
     private  String codigo;
     private  String nombreEmp;
     private String producto;
-    private String url;
+    private int url;
 
-    public Empresa(String nombre, String codigo, String nombreEmp, String producto, String url) {
+    public Empresa(String nombre, String codigo, String nombreEmp, String producto, int url) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.nombreEmp = nombreEmp;
@@ -57,16 +57,16 @@ public class Empresa implements Serializable {
         this.producto = producto;
     }
 
-    public String getUrl() {
+    public int getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(int url) {
         this.url = url;
     }
 
     @Override
     public String toString() {
-        return nombreEmp + "\n" + url;
+        return url + "\n" + nombreEmp;
     }
 }

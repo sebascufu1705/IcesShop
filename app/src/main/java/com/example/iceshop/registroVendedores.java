@@ -23,7 +23,7 @@ public class registroVendedores extends AppCompatActivity {
     private Button RegistrarEmpresaBtn;
     private ImageView imgDiems, imgLocuritas, imgSgrDaddies, imgNams, imgPerritos, imgLelePops;
 
-    private String fotoSeleccionada;
+    private int fotoSeleccionada;
 
 
     @Override
@@ -54,7 +54,7 @@ public class registroVendedores extends AppCompatActivity {
                     String codigo = code.getText().toString();
                     String nombreEmp = nameEmp.getText().toString();
                     String producto = product.getText().toString();
-                    String url = fotoSeleccionada;
+                    int url = fotoSeleccionada;
 
                     Empresa empresita = new Empresa(nombre, codigo, nombreEmp, producto, url);
 
@@ -67,37 +67,37 @@ public class registroVendedores extends AppCompatActivity {
 
         imgDiems.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "diems";
+                    fotoSeleccionada = R.drawable.diems;
                 }
         );
 
         imgLocuritas.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "locurita";
+                    fotoSeleccionada = R.drawable.locurita;
                 }
         );
 
         imgLelePops.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "lelepops";
+                    fotoSeleccionada = R.drawable.lelepops;
                 }
         );
 
         imgSgrDaddies.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "sgrdaddies";
+                    fotoSeleccionada = R.drawable.sgrdaddies;
                 }
         );
 
         imgNams.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "nams";
+                    fotoSeleccionada = R.drawable.nams;
                 }
         );
 
         imgPerritos.setOnClickListener(
                 (v) -> {
-                    fotoSeleccionada = "perritos";
+                    fotoSeleccionada = R.drawable.perritos;
                 }
         );
     }

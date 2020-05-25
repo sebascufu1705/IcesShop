@@ -19,8 +19,9 @@ import java.util.ArrayList;
 public class HomeCompradorActivity extends AppCompatActivity {
 
     private ListView listaComidas;
-    private ArrayAdapter<Empresa> adapter;
-    private ArrayList<Empresa> comidas;
+    //private ArrayAdapter<Empresa> adapter;
+    //private ArrayList<Empresa> comidas;
+    private CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +29,18 @@ public class HomeCompradorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_comprador);
 
         listaComidas = findViewById(R.id.listaComidas);
-        comidas = new ArrayList<Empresa>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, comidas);
+        adapter = new CustomAdapter();
+        //comidas = new ArrayList<Empresa>();
+        //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, comidas);
         listaComidas.setAdapter(adapter);
 
         FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Empresa empresa = dataSnapshot.getValue(Empresa.class);
-                comidas.add(empresa);
-                adapter.notifyDataSetChanged();
+                //comidas.add(empresa);
+                //adapter.notifyDataSetChanged();
+                adapter.agregarEmpresa(empresa);
             }
 
             @Override
