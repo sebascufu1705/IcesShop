@@ -5,9 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.iceshop.model.Empresa;
 import com.example.iceshop.model.Producto;
 
 import java.util.ArrayList;
@@ -46,8 +44,12 @@ public class adapterProductos extends BaseAdapter {
 
     }
     public void agregarProducto(Producto producto) {
-        productos.clear();
         productos.add(producto);
+        this.notifyDataSetChanged();
+    }
+
+    public void clear() {
+        productos.clear();
         this.notifyDataSetChanged();
     }
 }

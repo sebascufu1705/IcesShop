@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.iceshop.model.Empresa;
 import com.example.iceshop.model.Estudiante;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class inicioActivity extends AppCompatActivity {
@@ -39,9 +41,30 @@ public class inicioActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Estudiante user = dataSnapshot.getValue(Estudiante.class);
+                            if(user == null){
+                                Toast.makeText(inicioActivity.this, "el usuario no existe", Toast.LENGTH_LONG).show();
+                                return;
+                            }
                             if(user.getContraseña().equals(contraseña)){
-                                //Voy para la actividad de perfil
+                                //esto es para buscar en las ramas de firebase
+                                Query busqueda = FirebaseDatabase.getInstance().getReference().child("empresas")
+                                        .orderByChild("codigo").equalTo(user.getCodigo());
+                                busqueda.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot coincidencia: dataSnapshot.getChildren()
+                                             ) {
+                                            Empresa empresa = coincidencia.getValue(Empresa.class);
+                                            LoginState.getInstance().setEmpresa(empresa);
+                                            break;
+                                        }
+                                    }
 
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
                                 Intent i = new Intent(inicioActivity.this, selesccionActivity.class);
                                 startActivity(i);
                             //    Toast.makeText(inicioActivity.this,"iniciaste", Toast.LENGTH_LONG).show();

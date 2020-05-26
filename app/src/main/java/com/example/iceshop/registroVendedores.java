@@ -64,6 +64,8 @@ public class registroVendedores extends AppCompatActivity  {
                     FirebaseDatabase.getInstance().getReference()
                             .child("empresas").child(nombreEmp).setValue(empresita);
 
+                    LoginState.getInstance().setEmpresa(empresita);
+
                     Intent i = new Intent(registroVendedores.this, MisProductos.class);
                     startActivity(i);
 

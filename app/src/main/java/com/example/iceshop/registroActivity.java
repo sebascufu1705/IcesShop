@@ -17,6 +17,7 @@ public class registroActivity extends AppCompatActivity {
     private EditText passwordInput;
     private Button registrarBtn;
     private TextView iniciar;
+    private EditText codigoEstudiante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class registroActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
         registrarBtn = findViewById(R.id.registrarBtn);
         iniciar = findViewById(R.id.irIniciar);
+        codigoEstudiante = findViewById(R.id.codigoEstudiante);
 
 
         registrarBtn.setOnClickListener(
@@ -35,8 +37,9 @@ public class registroActivity extends AppCompatActivity {
                             .child("usuario").push().getKey();
                     String usuario = usuarioInput.getText().toString() ;
                     String contraseña = passwordInput.getText().toString();
+                    String codigo = codigoEstudiante.getText().toString();
 
-                    Estudiante estudiante = new Estudiante(id,usuario,contraseña);
+                    Estudiante estudiante = new Estudiante(id,usuario,contraseña,codigo);
 
                     FirebaseDatabase.getInstance().getReference()
                             .child("usuario").child(usuario).setValue(estudiante);

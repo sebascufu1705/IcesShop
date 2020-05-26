@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,6 +17,7 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MisProductos extends AppCompatActivity {
 
@@ -24,6 +26,7 @@ public class MisProductos extends AppCompatActivity {
     private ListView listaProductos;
     private adapterProductos adapter;
     private ImageView mensaje;
+    private Empresa empresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,62 +39,39 @@ public class MisProductos extends AppCompatActivity {
         mensaje = findViewById(R.id.mensaje);
 
         adapter = new adapterProductos();
-        listaProductos.setEmptyView(mensaje);
+       // listaProductos.setEmptyView(mensaje);
         listaProductos.setAdapter(adapter);
 
-       FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
+        empresa = LoginState.getInstance().getEmpresa();
+
+        FirebaseDatabase.getInstance().getReference().child("empresas").child(empresa.getNombreEmp()).child("productos").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Empresa empresa = dataSnapshot.getValue(Empresa.class);
-
-                FirebaseDatabase.getInstance().getReference().child("empresa").child(empresa.getNombreEmp()).child("prductos").addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                        Producto producto = dataSnapshot.getValue(Producto.class);
-
-                        adapter.agregarProducto(producto);
-                    }
-
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                    }
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-                    }
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                adapter.clear();
+                long productos = dataSnapshot.getChildrenCount();
+                if(productos > 0){
+                    mensaje.setVisibility(View.GONE);
+                }else{
+                    mensaje.setVisibility(View.VISIBLE);
+                }
+                for (DataSnapshot producto: dataSnapshot.getChildren()
+                     ) {
+                    Producto objeto = producto.getValue(Producto.class);
+                    objeto.setUrl(R.drawable.diems);
+                    adapter.agregarProducto(objeto);
+                }
             }
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-            }
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
-
-
-
         agregarProductoBtn.setOnClickListener(
                 (v)->{
                     Intent g = new Intent(MisProductos.this, AgregarProducto.class);
                     startActivity(g);
+
                 }
         );
     }

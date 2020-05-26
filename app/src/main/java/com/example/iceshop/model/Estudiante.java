@@ -6,14 +6,16 @@ public class Estudiante implements Serializable {
     private String id;
     private String usuario;
     private String contraseña;
+    private String codigo;
 
     public Estudiante() {
     }
 
-    public Estudiante(String id, String usuario, String contraseña) {
+    public Estudiante(String id, String usuario, String contraseña, String codigo) {
         this.id = id;
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.codigo = codigo;
     }
 
     public String getId() {
@@ -38,5 +40,13 @@ public class Estudiante implements Serializable {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }
