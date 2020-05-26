@@ -3,15 +3,15 @@ package com.example.iceshop.model;
 public class Producto {
     private String nombrePro;
     private String precio;
-    private  int foto;
+    private  int url;
 
     public Producto() {
     }
 
-    public Producto(String nombrePro, String precio, int foto) {
+    public Producto(String nombrePro, String precio, int url) {
         this.nombrePro = nombrePro;
         this.precio = precio;
-        this.foto = foto;
+        this.url = url;
     }
 
     public String getNombrePro() {
@@ -30,11 +30,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getFoto() {
-        return foto;
+    public int getUrl() {
+        return url;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setUrl(int url) {
+        this.url = url;
     }
 }

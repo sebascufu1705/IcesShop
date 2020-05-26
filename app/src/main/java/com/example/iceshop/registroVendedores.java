@@ -3,7 +3,6 @@ package com.example.iceshop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
 
-public class registroVendedores extends AppCompatActivity {
+public class registroVendedores extends AppCompatActivity  {
 
 
     private EditText nameStu;
@@ -25,6 +24,8 @@ public class registroVendedores extends AppCompatActivity {
     private ImageView imgDiems, imgLocuritas, imgSgrDaddies, imgNams, imgPerritos, imgLelePops, flehcaAtrasRV;
 
     private int fotoSeleccionada;
+
+
 
 
     @Override
@@ -109,5 +110,6 @@ public class registroVendedores extends AppCompatActivity {
                   finish();
                 }
         );
+
     }
 }

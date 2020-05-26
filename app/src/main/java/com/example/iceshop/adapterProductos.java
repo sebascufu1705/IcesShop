@@ -41,7 +41,7 @@ public class adapterProductos extends BaseAdapter {
         View row = inflater.inflate(R.layout.renglonproductos, null);
         ImageView fotoProducto = row.findViewById(R.id.fotoProducto);
 
-        fotoProducto.setImageResource(productos.get(i).getFoto());
+        fotoProducto.setImageResource(productos.get(i).getUrl());
         return row;
 
     }

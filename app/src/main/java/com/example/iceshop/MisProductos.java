@@ -36,6 +36,9 @@ public class MisProductos extends AppCompatActivity {
         listaProductos.setEmptyView(mensaje);
 
 
+
+
+
         agregarProductoBtn.setOnClickListener(
                 (v)->{
                     Intent g = new Intent(MisProductos.this, AgregarProducto.class);
