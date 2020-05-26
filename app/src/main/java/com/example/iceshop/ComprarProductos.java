@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -69,7 +68,7 @@ public class ComprarProductos extends AppCompatActivity {
         listaComproductos.setOnItemClickListener(
                 (view,renglon,pos,id)->{
                     Producto producto = (Producto) adapter.getItem(pos);
-                    Intent l = new Intent(this, ComprarProductos.class);
+                    Intent l = new Intent(this, PedirProductos.class);
                     startActivity(l);
 
 
