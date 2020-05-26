@@ -18,7 +18,11 @@ import android.widget.Toast;
 import com.example.iceshop.model.Empresa;
 import com.example.iceshop.model.Estudiante;
 import com.example.iceshop.model.Producto;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AgregarProducto extends AppCompatActivity {
 
@@ -29,7 +33,6 @@ public class AgregarProducto extends AppCompatActivity {
     private EditText imputProducto;
     private EditText imputPrecio;
     private TextView agregarFoto;
-    private Empresa empresaa;
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
@@ -46,6 +49,7 @@ public class AgregarProducto extends AppCompatActivity {
         imputProducto = findViewById(R.id.imputProducto);
         imputPrecio = findViewById(R.id.imputPrecio);
         agregarFoto = findViewById(R.id.agregarFoto);
+
 
         agregarFoto.setOnClickListener(
                 (v)->{
@@ -68,17 +72,42 @@ public class AgregarProducto extends AppCompatActivity {
         );
 
 
+
         publicarBtn.setOnClickListener(
                 (v)->{
 
-
+            FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    Empresa empresa = dataSnapshot.getValue(Empresa.class);
 
                     int url = R.drawable.fotoagregar;
                     String productico = imputProducto.getText().toString() ;
                     String precio = imputPrecio.getText().toString();
+
                     Producto producto = new Producto(productico,precio,url);
+
                     FirebaseDatabase.getInstance().getReference()
-                            .child("empresas").child("Suggar Daddy's").child("productos").child(productico).setValue(producto);
+                            .child("empresas").child(empresa.getNombreEmp()).child("productos").child(productico).setValue(producto);
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                }
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
 
@@ -97,10 +126,9 @@ public class AgregarProducto extends AppCompatActivity {
 
                     */
 
-                    finish();
+            finish();
 
-                }
-        );
+        });
     }
     private void pickImageFromGallery(){
 

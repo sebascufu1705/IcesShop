@@ -30,8 +30,8 @@ public class HomeCompradorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_comprador);
-        flechaAtrasC = findViewById(R.id.flechaAtrasC);
 
+        flechaAtrasC = findViewById(R.id.flechaAtrasC);
         listaComidas = findViewById(R.id.listaComidas);
         adapter = new CustomAdapter();
         //comidas = new ArrayList<Empresa>();

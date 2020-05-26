@@ -46,6 +46,7 @@ public class adapterProductos extends BaseAdapter {
 
     }
     public void agregarProducto(Producto producto) {
+        productos.clear();
         productos.add(producto);
         this.notifyDataSetChanged();
     }

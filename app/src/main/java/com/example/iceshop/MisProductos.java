@@ -1,5 +1,7 @@
 package com.example.iceshop;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,7 +10,11 @@ import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.iceshop.model.Empresa;
+import com.example.iceshop.model.Producto;
 import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MisProductos extends AppCompatActivity {
@@ -30,12 +36,55 @@ public class MisProductos extends AppCompatActivity {
         mensaje = findViewById(R.id.mensaje);
 
         adapter = new adapterProductos();
+        listaProductos.setEmptyView(mensaje);
         listaProductos.setAdapter(adapter);
 
+       FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Empresa empresa = dataSnapshot.getValue(Empresa.class);
 
-        listaProductos.setEmptyView(mensaje);
+                FirebaseDatabase.getInstance().getReference().child("empresa").child(empresa.getNombreEmp()).child("prductos").addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                        Producto producto = dataSnapshot.getValue(Producto.class);
 
+                        adapter.agregarProducto(producto);
+                    }
 
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                    }
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                    }
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+            }
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
 
 
