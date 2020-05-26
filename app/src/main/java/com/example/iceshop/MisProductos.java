@@ -57,7 +57,6 @@ public class MisProductos extends AppCompatActivity {
                 for (DataSnapshot producto: dataSnapshot.getChildren()
                      ) {
                     Producto objeto = producto.getValue(Producto.class);
-                    objeto.setUrl(R.drawable.diems);
                     adapter.agregarProducto(objeto);
                 }
             }
@@ -74,5 +73,13 @@ public class MisProductos extends AppCompatActivity {
 
                 }
         );
+
+        flechaAtrasMP.setOnClickListener(
+                (v) -> {
+                    Intent i = new Intent(this, selesccionActivity.class);
+                    startActivity(i);
+                }
+        );
+
     }
 }

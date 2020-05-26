@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.iceshop.model.Producto;
 
@@ -38,8 +39,12 @@ public class adapterProductos extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View row = inflater.inflate(R.layout.renglonproductos, null);
         ImageView fotoProducto = row.findViewById(R.id.fotoProducto);
+        TextView nombrePro = row.findViewById(R.id.nombrePro);
+        TextView precioPro = row.findViewById(R.id.precioPro);
 
         fotoProducto.setImageResource(productos.get(i).getUrl());
+        nombrePro.setText(productos.get(i).getNombrePro());
+        precioPro.setText(productos.get(i).getPrecio());
         return row;
 
     }

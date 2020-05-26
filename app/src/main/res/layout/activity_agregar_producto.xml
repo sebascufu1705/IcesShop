@@ -27,19 +27,6 @@
         app:srcCompat="@drawable/cancelarbtn" />
 
     <ImageView
-        android:id="@+id/imagenBtn"
-        android:layout_width="240dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView21"
-        app:layout_constraintVertical_bias="0.028"
-        app:srcCompat="@drawable/fotoagregar" />
-
-    <ImageView
         android:id="@+id/imageView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,7 +137,7 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto"
         android:text="Producto"
         android:textColor="#777777"
@@ -158,7 +145,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBrownie" />
 
     <TextView
         android:id="@+id/textView23"
@@ -203,15 +190,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
-    <TextView
-        android:id="@+id/agregarFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Haz Click aqui para agregar una foto"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/imgAlfajor"
+        android:layout_width="134dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenBtn"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/alfa" />
+
+    <ImageView
+        android:id="@+id/imgAlfaCho"
+        android:layout_width="138dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@+id/imgAlfajor"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/alfacho" />
+
+    <ImageView
+        android:id="@+id/imgBrownie"
+        android:layout_width="135dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAlfajor"
+        app:srcCompat="@drawable/brownie" />
+
+    <ImageView
+        android:id="@+id/imgPapas"
+        android:layout_width="138dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBrownie"
+        app:layout_constraintTop_toBottomOf="@+id/imgAlfaCho"
+        app:srcCompat="@drawable/paps" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
