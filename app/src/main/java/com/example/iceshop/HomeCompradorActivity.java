@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.iceshop.model.Empresa;
+import com.example.iceshop.model.Producto;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -72,6 +73,14 @@ public class HomeCompradorActivity extends AppCompatActivity {
             }
         });
 
+
+        listaComidas.setOnItemClickListener(
+                (view,renglon,pos,id)->{
+                    Empresa empresa = (Empresa) adapter.getItem(pos);
+                    Intent j = new Intent(this, ComprarProductos.class);
+                    startActivity(j);
+                }
+        );
 
     }
 }

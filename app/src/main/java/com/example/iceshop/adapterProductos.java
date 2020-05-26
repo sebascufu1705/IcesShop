@@ -57,4 +57,5 @@ public class adapterProductos extends BaseAdapter {
         productos.clear();
         this.notifyDataSetChanged();
     }
+
 }

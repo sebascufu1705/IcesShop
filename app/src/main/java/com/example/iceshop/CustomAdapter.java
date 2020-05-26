@@ -51,4 +51,7 @@ public class CustomAdapter extends BaseAdapter {
         empresas.add(empresa);
         this.notifyDataSetChanged();
     }
+    public void posision(int pos) {
+        empresas.get(pos);
+    }
 }
