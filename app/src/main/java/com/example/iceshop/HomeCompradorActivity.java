@@ -27,6 +27,7 @@ public class HomeCompradorActivity extends AppCompatActivity {
     private CustomAdapter adapter;
     private ImageView flechaAtrasC;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
