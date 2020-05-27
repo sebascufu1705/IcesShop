@@ -34,10 +34,11 @@ public class ComprarProductos extends AppCompatActivity {
 
         listaComproductos.setAdapter(adapter);
 
-        empresa = LoginState.getInstance().getEmpresa();
-        nombreComEmpresa.setText(empresa.getNombreEmp());
+        String nombreEmpresa = getIntent().getExtras().get("nombreEmpresa").toString();
 
-        FirebaseDatabase.getInstance().getReference().child("empresas").child(empresa.getNombreEmp()).child("productos")
+        nombreComEmpresa.setText(nombreEmpresa);
+
+        FirebaseDatabase.getInstance().getReference().child("empresas").child(nombreEmpresa).child("productos")
                 .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

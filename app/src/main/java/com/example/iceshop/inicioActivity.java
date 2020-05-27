@@ -71,8 +71,8 @@ public class inicioActivity extends AppCompatActivity {
                             }else{
                                 //No concuerda la contraseña
 
-                                Intent i = new Intent(inicioActivity.this, inicioActivity.class);
-                                startActivity(i);
+                                //Intent i = new Intent(inicioActivity.this, inicioActivity.class);
+                                //startActivity(i);
                                 Toast.makeText(inicioActivity.this,"El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
                             }
                         }

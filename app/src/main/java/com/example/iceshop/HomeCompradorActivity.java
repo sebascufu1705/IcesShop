@@ -16,10 +16,12 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class HomeCompradorActivity extends AppCompatActivity {
+public class HomeCompradorActivity extends AppCompatActivity implements Serializable {
 
     private ListView listaComidas;
     //private ArrayAdapter<Empresa> adapter;
@@ -46,6 +48,7 @@ public class HomeCompradorActivity extends AppCompatActivity {
                     finish();
                 }
         );
+
 
         FirebaseDatabase.getInstance().getReference().child("empresas").addChildEventListener(new ChildEventListener() {
             @Override
@@ -79,6 +82,7 @@ public class HomeCompradorActivity extends AppCompatActivity {
                 (view,renglon,pos,id)->{
                     Empresa empresa = (Empresa) adapter.getItem(pos);
                     Intent j = new Intent(this, ComprarProductos.class);
+                    j.putExtra("nombreEmpresa", empresa.getNombreEmp().toString());
                     startActivity(j);
                 }
         );
