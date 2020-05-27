@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class HomeCompradorActivity extends AppCompatActivity implements Serializable {
+public class HomeCompradorActivity extends AppCompatActivity  {
 
     private ListView listaComidas;
     //private ArrayAdapter<Empresa> adapter;

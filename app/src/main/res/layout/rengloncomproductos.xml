@@ -33,6 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/fotoPrecioCom"
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,14 +42,15 @@
 
     <TextView
         android:id="@+id/precioComPro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="73dp"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto"
         android:text="TextView"
         android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toEndOf="@+id/nombreComPro"
         app:layout_constraintTop_toBottomOf="@+id/fotoProductoCom" />
 

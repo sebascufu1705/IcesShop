@@ -70,6 +70,9 @@ public class ComprarProductos extends AppCompatActivity {
                 (view,renglon,pos,id)->{
                     Producto producto = (Producto) adapter.getItem(pos);
                     Intent l = new Intent(this, PedirProductos.class);
+                    l.putExtra("nombreProducto", producto.getNombrePro().toString());
+                    l.putExtra("precioProducto", producto.getPrecio().toString());
+                    l.putExtra("fotoPro", producto.getUrl());
                     startActivity(l);
 
 
